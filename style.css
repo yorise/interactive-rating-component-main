@@ -1,0 +1,149 @@
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --LightGrey: hsl(217, 12%, 63%);
+  --DarkBlue: hsl(213, 19%, 18%);
+  --VeryDarkBlue: hsl(216, 12%, 8%);
+}
+
+body {
+  color: var(--White);
+  font-family: "Overpass", sans-serif;
+  background-color: var(--VeryDarkBlue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+main .succes {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .container,
+main .succes {
+  background-color: hsl(212, 25%, 12%);
+  margin: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+  border-radius: 1.5rem;
+}
+
+.container img {
+  background-color: hsl(215, 21%, 21%);
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.container h1 {
+  line-height: 0.5;
+}
+
+.container p {
+  line-height: 1.7;
+  color: var(--LightGrey);
+}
+
+.container ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-between;
+  color: var(--LightGrey);
+}
+
+.container ul li {
+  list-style: none;
+  background-color: hsl(215, 21%, 21%);
+  padding: 1.5rem;
+  border-radius: 50%;
+  line-height: 0;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.5s;
+}
+
+.container ul li:hover {
+  background-color: var(--Orange);
+  color: hsl(212, 25%, 12%);
+}
+
+.container ul li.active {
+  background-color: var(--White);
+  color: hsl(212, 25%, 12%);
+}
+
+.container button {
+  width: 100%;
+  background-color: var(--Orange);
+  color: hsl(212, 25%, 12%);
+  height: 3rem;
+  border-radius: 3rem;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.container button:hover {
+  background-color: var(--White);
+}
+
+.succes p:nth-child(2) {
+  color: var(--Orange);
+  background-color: hsl(215, 21%, 21%);
+  padding: 0.3rem 1.2rem;
+  margin: 2.5rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}
+
+.succes h1 {
+  margin: 0;
+}
+
+.succes p:nth-child(4) {
+  color: var(--LightGrey);
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated {
+  animation: fadeIn 1s ease-out;
+}
+
+@media screen and (min-width: 600px) {
+  main .container,
+  main .succes {
+    width: 50%;
+  }
+
+  main .succes {
+    width: 55%;
+  }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+  main .container,
+  main .succes {
+    width: 95%;
+  }
+}
